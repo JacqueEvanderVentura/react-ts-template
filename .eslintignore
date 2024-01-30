@@ -1,0 +1,8 @@
+.eslintrc.cjs
+*.cjs
+*.config.*
+.prettierrc
+index.html
+package.json
+README.md
+tsconfig.*
