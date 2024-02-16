@@ -6,3 +6,5 @@ index.html
 package.json
 README.md
 tsconfig.*
+
+*.spec.*
