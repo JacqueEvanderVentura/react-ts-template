@@ -1,7 +1,15 @@
+import { useState, ChangeEvent } from "react";
 import "./App.scss";
-import { Button, Input, Heading } from "./components";
+import { Button, Input, Heading, Datalist } from "./components";
 
 function App() {
+	const [datalistValue, setDatalistValue] = useState<string | number>();
+	function handleDatalistChange(e: ChangeEvent<HTMLInputElement>) {
+		e.preventDefault();
+
+		setDatalistValue(e.target.value);
+	}
+
 	return (
 		<div className="flex flex-col justify-center items-center w-full">
 			<div className="flex flex-col justify-center items-center w-5/12  gap-2">
@@ -34,6 +42,18 @@ function App() {
 					>
 						Custom button
 					</Button>
+				</div>
+				<div className="flex flex-row gap-3">
+					<Datalist
+						selectedValue={datalistValue ?? "Datalist"}
+						onChange={handleDatalistChange}
+					>
+						<option value="Datalist">From my component library</option>
+						<option value="Value">Abc</option>
+						<option value="Arroz">Plato típico</option>
+						<option value="Soda">Beverage</option>
+						<option value="Mismo value y label">Mismo value y label</option>
+					</Datalist>
 				</div>
 			</div>
 		</div>
