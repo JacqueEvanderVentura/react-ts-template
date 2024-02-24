@@ -1,43 +1,46 @@
-module.exports = {
-	env: {
-		browser: true,
-		es2021: true,
-	},
-	parser: "@typescript-eslint/parser",
-	extends: [
-		"eslint:recommended",
-		"plugin:react/recommended",
-		"plugin:react/jsx-runtime",
-		"standard",
-	],
-	overrides: [
-		{
-			env: {
-				node: true,
+	module.exports = {
+		env: {
+			browser: true,
+			es2021: true,
+		},
+		parser: "@typescript-eslint/parser",
+		extends: [
+			"eslint:recommended",
+			"plugin:react/recommended",
+			"plugin:react/jsx-runtime",
+			"standard",
+			"eslint-config-prettier",
+			"prettier"
+		],
+		overrides: [
+			{
+				env: {
+					node: true,
+				},
+				files: [".eslintrc.{js,cjs}"],
+				parserOptions: {
+					sourceType: "script",
+				},
 			},
-			files: [".eslintrc.{js,cjs}"],
-			parserOptions: {
-				sourceType: "script",
+		],
+		parserOptions: {
+			ecmaVersion: "latest",
+			sourceType: "module",
+		},
+		plugins: ["react", "prettier"],
+		settings: {
+			react: {
+				version: "detect",
 			},
 		},
-	],
-	parserOptions: {
-		ecmaVersion: "latest",
-		sourceType: "module",
-	},
-	plugins: ["react"],
-	settings: {
-		react: {
-			version: "detect",
+		rules: {
+			"no-tabs": ["error", { allowIndentationTabs: true }],
+			"react/react-in-jsx-scope": 0,
+			semi: ["error", "always"],
+			quotes: ["error", "double"],
+			"space-before-function-paren": ["error", "never"],
+			"function-paren-newline": ["error", "never"],
+			indent: "off",
+			"comma-dangle": ["error", "always-multiline"],
 		},
-	},
-	rules: {
-		"no-tabs": ["error", { allowIndentationTabs: true }],
-		"react/react-in-jsx-scope": 0,
-		semi: ["error", "always"],
-		quotes: ["error", "double"],
-		"space-before-function-paren": ["error", "never"],
-		indent: ["error", "tab"],
-		"comma-dangle": ["error", "always-multiline"]
-	},
-};
+	};
