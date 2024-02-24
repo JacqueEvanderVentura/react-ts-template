@@ -1,9 +1,9 @@
 import "./App.scss";
 
-import { Showcase } from "./dummy-components/Showcase";
+import { ParallaxUI } from "./dummy-components/ParallaxUI";
 
 function App() {
-	return <Showcase />;
+	return <ParallaxUI />;
 }
 
 export default App;
