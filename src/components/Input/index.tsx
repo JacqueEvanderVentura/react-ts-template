@@ -1,28 +1,36 @@
-import React from "react";
+import { InputHTMLAttributes, FC } from "react";
 import classNames from "classnames";
+import { FieldValues, UseFormRegisterReturn, DeepMap, FieldError } from "react-hook-form";
 
-// interface InputProps {
-// id?: string;
-// name?: string;
-// type?: string;
-// value?: string;
-// placeholder?: string;
-// onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-// onClick?: () => void;
-// className?: string;
-// }
+import { Typography } from "../";
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	className?: string;
+	name: string;
+	label?: string;
+	register: UseFormRegisterReturn<any>;
+	required?: boolean;
+	errors?: DeepMap<FieldValues, FieldError>;
 }
 
-const Input: React.FC<InputProps> = ({ className, ...rest }) => {
-	const inputClasses = classNames(
-		"border border-gray-300 rounded-md p-2",
-		className,
+const Input: FC<InputProps> = ({ className, name, label, register, required, errors, ...rest }) => {
+	const inputClasses = classNames("border border-gray-300 rounded-md p-2 m-2 w-full", className);
+	return (
+		<div className="flex flex-col">
+			{label && (
+				<label className="mt-2 text-sm text-gray-700" htmlFor={name}>
+					{label}
+					{errors && <span className="text-red-500">*</span>}
+				</label>
+			)}
+			<input {...register} {...rest} className={inputClasses} />
+			{errors && errors[name] && (
+				<Typography size="xs" variant="warning">
+					*This field is required
+				</Typography>
+			)}
+		</div>
 	);
-
-	return <input {...rest} className={inputClasses} />;
 };
 
 export default Input;

@@ -7,11 +7,7 @@ interface HeadingProps {
 	className?: string;
 }
 
-const Heading: React.FC<HeadingProps> = ({
-	level = "h1",
-	children,
-	className,
-}) => {
+const Heading: React.FC<HeadingProps> = ({ level = "h1", children, className }) => {
 	const TagName = level;
 
 	const headingStyles = {
