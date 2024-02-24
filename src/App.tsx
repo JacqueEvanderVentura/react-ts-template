@@ -64,7 +64,7 @@ function App() {
 								type="email"
 								name="email"
 								placeholder="Type in your email"
-								register={register("email")}
+								register={register("email", { required: true })}
 								errors={errors}
 							/>
 							<Input
@@ -81,7 +81,8 @@ function App() {
 								defaultValue="Please select an option"
 								register={register}
 								errors={errors}
-								required>
+								required
+							>
 								<option>lorei lorai</option>
 								<option>como tan mushasho</option>
 								<option value="bien">lo veo muy</option>
@@ -91,7 +92,8 @@ function App() {
 								required
 								name="datalist"
 								label="Choose from Datalist"
-								errors={errors}>
+								errors={errors}
+							>
 								<option>Option 1</option>
 								<option>Lotion 1</option>
 								<option value="option2">Option 2</option>

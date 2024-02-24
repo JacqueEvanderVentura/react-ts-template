@@ -15,7 +15,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 			anchorOrigin={{
 				vertical: "top",
 				horizontal: "right",
-			}}>
+			}}
+		>
 			<App />
 		</SnackbarProvider>
 	</React.StrictMode>,

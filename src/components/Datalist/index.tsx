@@ -51,7 +51,7 @@ const DataList: React.FC<DataListProps> = ({
 			</div>
 			{errors && errors[name] && (
 				<Typography size="xs" variant="warning">
-					{errors[name].message}
+					* {errors[name].message}
 				</Typography>
 			)}
 		</div>
