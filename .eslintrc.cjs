@@ -39,7 +39,6 @@
 			semi: ["error", "always"],
 			quotes: ["error", "double"],
 			"space-before-function-paren": ["error", "never"],
-			"function-paren-newline": ["error", "never"],
 			indent: "off",
 			"comma-dangle": ["error", "always-multiline"],
 		},

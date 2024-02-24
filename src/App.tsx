@@ -1,6 +1,8 @@
 import "./App.scss";
 
 import { useSnackbar } from "notistack";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFaceGrinWink } from "@fortawesome/free-regular-svg-icons";
 
 import { Button, Input, Heading, Datalist, Select } from "./components";
 import { useForm } from "react-hook-form";
@@ -37,7 +39,7 @@ function App() {
 			<div className="flex flex-col justify-center items-center w-full">
 				<div className="flex flex-col justify-center items-center w-5/12 gap-2">
 					<Heading level="h2" className="my-8">
-						Welcome to my template :)
+						Welcome to my template <FontAwesomeIcon className="text-amber-400" icon={faFaceGrinWink} />
 					</Heading>
 
 					<div className="grid grid-cols-3 gap-2">
@@ -79,8 +81,7 @@ function App() {
 								defaultValue="Please select an option"
 								register={register}
 								errors={errors}
-								required
-							>
+								required>
 								<option>lorei lorai</option>
 								<option>como tan mushasho</option>
 								<option value="bien">lo veo muy</option>
@@ -90,8 +91,7 @@ function App() {
 								required
 								name="datalist"
 								label="Choose from Datalist"
-								errors={errors}
-							>
+								errors={errors}>
 								<option>Option 1</option>
 								<option>Lotion 1</option>
 								<option value="option2">Option 2</option>
