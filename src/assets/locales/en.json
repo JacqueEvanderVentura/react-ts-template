@@ -1,0 +1,23 @@
+{
+	"welcome": "Welcome to my template",
+	"buttons": "Buttons",
+
+	"form-component": "Form component",
+	"button-large": "Large chill button",
+	"button-medium": "Medium cool button",
+	"button-small": "Small relaxed button",
+	"button-custom": "Custom",
+	"variant-primary": "Primary variant",
+	"variant-secondary": "Secondary variant",
+
+	"placeholder-email": "Type in your email",
+	"placeholder-password": "Type in your password",
+	"placeholder-select": "Please select an option",
+	"placeholder-datalist": "Please select an option",
+	"placeholder-url": "Type in your URL",
+	"field-required": "This field is required",
+	"submit-button": "Submit",
+
+	"go-back-to-beginning": "Go back to beginning",
+	"unknown-error": "Unknown error"
+}

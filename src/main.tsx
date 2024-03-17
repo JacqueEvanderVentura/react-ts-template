@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./i18n";
 
 import { Root } from "./routes/root.tsx";
 import { Buttons } from "./routes/dummy/Buttons.tsx";

@@ -2,6 +2,7 @@ import { useRouteError, isRouteErrorResponse, Link } from "react-router-dom";
 import { Button, Heading, Typography } from "..";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleLeft } from "@fortawesome/free-regular-svg-icons";
+import { t } from "i18next";
 
 interface IErrorMessage {
 	status?: string | number;
@@ -16,7 +17,7 @@ const ErrorMessage = ({ status, text }: IErrorMessage) => {
 			<Typography>{text ?? "Sorry, an unexpected error has occurred"}</Typography>
 			<Link to="/">
 				<Button className="mt-20">
-					<FontAwesomeIcon icon={faCircleLeft} /> Go back to beginning
+					<FontAwesomeIcon icon={faCircleLeft} /> {t("go-back-to-beginning")}
 				</Button>
 			</Link>
 		</div>

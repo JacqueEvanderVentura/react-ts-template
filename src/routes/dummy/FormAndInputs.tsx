@@ -1,6 +1,7 @@
 import { enqueueSnackbar } from "notistack";
 import { useForm } from "react-hook-form";
 import { Heading, Input, Select, Datalist, Button } from "../../components";
+import { useTranslation } from "react-i18next";
 
 export const FormAndInputs = () => {
 	const {
@@ -10,7 +11,6 @@ export const FormAndInputs = () => {
 	} = useForm();
 
 	function handleOnSubmitForm(formState: Record<string, any>) {
-		console.info(formState);
 		const content = (
 			<div>
 				{Object.entries(formState).map(([key, value]) => (
@@ -27,15 +27,16 @@ export const FormAndInputs = () => {
 		});
 	}
 
+	const { t } = useTranslation();
 	return (
 		<div className="w-full h-full border-2">
 			<form onSubmit={handleSubmit(handleOnSubmitForm)} className="border-2 w-full p-3">
-				<Heading level="h3">Form Component</Heading>
+				<Heading level="h3">{t("form-component")}</Heading>
 				<Input
 					label="Email"
 					type="email"
 					name="email"
-					placeholder="Type in your email"
+					placeholder={t("placeholder-email")}
 					register={register("email", { required: true })}
 					errors={errors}
 				/>
@@ -43,14 +44,14 @@ export const FormAndInputs = () => {
 					label="Password"
 					type="password"
 					name="password"
-					placeholder="Type in your password"
+					placeholder={t("placeholder-password")}
 					register={register("password")}
 				/>
-				{errors.password && <span>This field is required</span>}
+				{errors.password && <span>{t("field-required")}</span>}
 				<Select
 					name="exampleSelect"
-					label="Example Select"
-					defaultValue="Please select an option"
+					label="Select"
+					defaultValue={t("placeholder-select")}
 					register={register}
 					errors={errors}
 					required>
@@ -82,7 +83,7 @@ export const FormAndInputs = () => {
 				<Input register={register("date")} name="date" type="date" />
 				<Input register={register("color")} name="color" className="w-20 h-20" type="color" />
 				<div className="flex flex-row justify-end gap-2">
-					<Button type="submit">Submit</Button>
+					<Button type="submit">{t("submit-button")}</Button>
 				</div>
 			</form>
 		</div>

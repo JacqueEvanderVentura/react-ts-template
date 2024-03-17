@@ -1,0 +1,23 @@
+{
+	"welcome": "Bienvenido a mi plantilla",
+	"buttons": "Botones",
+
+	"form-component": "Componente Form",
+	"button-large": "Botón largototote (large)",
+	"button-medium": "Botón mediano (medium)",
+	"button-small": "Botón chiquitito (small)",
+	"button-custom": "Personalizado",
+	"variant-primary": "Variante Primary",
+	"variant-secondary": "Variante Secondary",
+
+	"placeholder-email": "Escribe tu correo electrónico",
+	"placeholder-password": "Escribe tu contraseña",
+	"placeholder-select": "Por favor, selecciona una opción",
+	"placeholder-datalist": "Por favor, selecciona una opción",
+	"placeholder-url": "Escribe tu URL",
+	"field-required": "Este campo es requerido",
+	"submit-button": "Enviar",
+
+	"go-back-to-beginning": "Volver al inicio",
+	"unknown-error": "Error desconocido"
+}

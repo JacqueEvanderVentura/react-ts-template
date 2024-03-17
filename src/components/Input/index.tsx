@@ -3,6 +3,7 @@ import classNames from "classnames";
 import { FieldValues, UseFormRegisterReturn, DeepMap, FieldError } from "react-hook-form";
 
 import { Typography } from "../";
+import { t } from "i18next";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	className?: string;
@@ -26,7 +27,7 @@ const Input: FC<InputProps> = ({ className, name, label, register, required, err
 			<input {...register} {...rest} className={inputClasses} />
 			{errors && errors[name] && (
 				<Typography size="xs" variant="warning">
-					*This field is required
+					* {t("field-required")}
 				</Typography>
 			)}
 		</div>
