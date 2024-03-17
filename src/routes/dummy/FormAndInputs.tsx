@@ -29,7 +29,7 @@ export const FormAndInputs = () => {
 
 	const { t } = useTranslation();
 	return (
-		<div className="w-full h-full border-2 p-3">
+		<div className="w-96 md:w-[600px] h-full border-2 p-3">
 			<form onSubmit={handleSubmit(handleOnSubmitForm)} className="w-full">
 				<Heading level="h3">{t("form-component")}</Heading>
 				<Input
@@ -60,11 +60,32 @@ export const FormAndInputs = () => {
 				</Datalist>
 				<Input register={register("URL")} name="URL" placeholder="Type in your URL" type="url" />
 				<div className="flex flex-row justify-center gap-2">
-					<Input type="radio" name="radioGroup" id="radio1" value="radio1" register={register("radioGroup")} label="Radio 1" />
+					<Input
+						type="radio"
+						name="radioGroup"
+						id="radio1"
+						value="radio1"
+						register={register("radioGroup")}
+						label="Radio 1"
+					/>
 
-					<Input type="radio" name="radioGroup" id="radio2" value="radio2" register={register("radioGroup")} label="Radio 2" />
+					<Input
+						type="radio"
+						name="radioGroup"
+						id="radio2"
+						value="radio2"
+						register={register("radioGroup")}
+						label="Radio 2"
+					/>
 
-					<Input type="radio" name="radioGroup" id="radio3" value="radio3" register={register("radioGroup")} label="Radio 3" />
+					<Input
+						type="radio"
+						name="radioGroup"
+						id="radio3"
+						value="radio3"
+						register={register("radioGroup")}
+						label="Radio 3"
+					/>
 				</div>
 
 				<div className="flex flex-row justify-center gap-2">
@@ -74,8 +95,8 @@ export const FormAndInputs = () => {
 
 					<Input type="checkbox" name="checkbox3" register={register("checkbox3")} label="Checkbox  3" />
 				</div>
-				<Input register={register("date")} name="date" type="date" />
-				<Input register={register("color")} name="color" className="w-20 h-20" type="color" />
+				<Input register={register("date")} name="date" className="!w-48 self-center" type="date" />
+				<Input register={register("color")} name="color" type="color" />
 				<div className="flex flex-row justify-end gap-2">
 					<Button type="submit">{t("submit-button")}</Button>
 				</div>
