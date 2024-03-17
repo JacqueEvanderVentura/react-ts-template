@@ -5,3 +5,15 @@
 * {
 	@apply m-0 p-0 box-border;
 }
+
+.input {
+	@apply border border-gray-300 rounded-md p-2 my-2 w-full h-11;
+}
+
+.input-radio {
+	@apply h-5;
+}
+
+.input-checkbox {
+	@apply h-4;
+}

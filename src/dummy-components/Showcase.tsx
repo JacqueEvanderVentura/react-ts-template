@@ -10,10 +10,10 @@ export const Showcase = () => {
 	const { t } = useTranslation();
 	return (
 		<div className="flex flex-col justify-center items-center w-[98vw] m-1">
-			<div className="absolute top-0 right-10">
+			<div className="absolute top-2 right-2">
 				<LanguageSwitcher />
 			</div>
-			<Heading level="h2" className="my-4">
+			<Heading level="h2" className="my-4 text-center mt-12">
 				{t("welcome")} <FontAwesomeIcon className="text-amber-400" icon={faFaceGrinWink} />{" "}
 			</Heading>
 			<div className="flex flex-col justify-center items-center w-5/12 gap-2">

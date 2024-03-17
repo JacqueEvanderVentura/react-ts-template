@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import classNames from "classnames";
 import { FieldValues, UseFormRegister, DeepMap, FieldError } from "react-hook-form";
 import { Typography } from "../";
+import { t } from "i18next";
 interface DataListProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	className?: string;
 	children: ReactNode;
@@ -22,9 +23,9 @@ const DataList: React.FC<DataListProps> = ({
 	errors,
 	...rest
 }) => {
-	const dataListClasses = classNames("border border-gray-300 rounded-md p-2 m-2 w-full h-full", className);
+	const dataListClasses = classNames("input", className);
 
-	const validationRule = (value: string) => value.trim() !== "" || "This field is required";
+	const validationRule = (value: string) => value.trim() !== "" || t("field-required");
 
 	const registerRequirementHandler = required
 		? register(name, {
@@ -46,6 +47,7 @@ const DataList: React.FC<DataListProps> = ({
 					{...registerRequirementHandler}
 					className="w-full outline-none bg-transparent"
 					{...rest}
+					placeholder={t("placeholder-datalist")}
 				/>
 				<datalist id="datalistOptions">{children}</datalist>
 			</div>

@@ -2,6 +2,8 @@ import React from "react";
 import classNames from "classnames";
 import { FieldValues, UseFormRegister, DeepMap, FieldError } from "react-hook-form";
 import { Typography } from "../";
+import { t } from "i18next";
+
 interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
 	className?: string;
 	children: React.ReactNode;
@@ -24,15 +26,16 @@ const Select: React.FC<SelectProps> = ({
 	errors,
 	...rest
 }) => {
-	const selectClasses = classNames("border border-gray-300 rounded-md p-2 m-2 w-full h-full", className);
+	const selectClasses = classNames("input", className);
 
-	const validationRule = (value: string) => value !== "Please select an option" || "This field is required";
+	const validationRule = (value: string) => {
+		return value !== "" || t("field-required");
+	};
 
-	const registerRequirementHandler = required
-		? register(name, {
-				validate: validationRule || undefined,
-			})
-		: register(name, { required: false });
+	const registerRequirementHandler = register(name, {
+		required: required ? t("field-required") : false,
+		validate: required ? validationRule : undefined,
+	});
 
 	return (
 		<div className="flex flex-col">
@@ -43,9 +46,9 @@ const Select: React.FC<SelectProps> = ({
 				</label>
 			)}
 			<select defaultValue={defaultValue} className={selectClasses} {...registerRequirementHandler} {...rest}>
-				{defaultValue && (
-					<option value={defaultValue} disabled>
-						{defaultValue}
+				{!defaultValue && (
+					<option value="" disabled selected>
+						{t("placeholder-select")}
 					</option>
 				)}
 				{children}

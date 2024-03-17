@@ -29,8 +29,8 @@ export const FormAndInputs = () => {
 
 	const { t } = useTranslation();
 	return (
-		<div className="w-full h-full border-2">
-			<form onSubmit={handleSubmit(handleOnSubmitForm)} className="border-2 w-full p-3">
+		<div className="w-full h-full border-2 p-3">
+			<form onSubmit={handleSubmit(handleOnSubmitForm)} className="w-full">
 				<Heading level="h3">{t("form-component")}</Heading>
 				<Input
 					label="Email"
@@ -48,15 +48,9 @@ export const FormAndInputs = () => {
 					register={register("password")}
 				/>
 				{errors.password && <span>{t("field-required")}</span>}
-				<Select
-					name="exampleSelect"
-					label="Select"
-					defaultValue={t("placeholder-select")}
-					register={register}
-					errors={errors}
-					required>
-					<option>lorei lorai</option>
-					<option>como tan mushasho</option>
+				<Select name="select" label="Select" register={register} errors={errors} required>
+					<option value="lorei lorai">lorei lorai</option>
+					<option value="como tan mushasho">como tan mushasho</option>
 					<option value="bien">lo veo muy</option>
 				</Select>
 				<Datalist register={register} required name="datalist" label="Choose from Datalist" errors={errors}>
@@ -66,11 +60,11 @@ export const FormAndInputs = () => {
 				</Datalist>
 				<Input register={register("URL")} name="URL" placeholder="Type in your URL" type="url" />
 				<div className="flex flex-row justify-center gap-2">
-					<Input type="radio" name="radioGroup" value="radio1" register={register("radioGroup")} label="Radio 1" />
+					<Input type="radio" name="radioGroup" id="radio1" value="radio1" register={register("radioGroup")} label="Radio 1" />
 
-					<Input type="radio" name="radioGroup" value="radio2" register={register("radioGroup")} label="Radio 2" />
+					<Input type="radio" name="radioGroup" id="radio2" value="radio2" register={register("radioGroup")} label="Radio 2" />
 
-					<Input type="radio" name="radioGroup" value="radio3" register={register("radioGroup")} label="Radio 3" />
+					<Input type="radio" name="radioGroup" id="radio3" value="radio3" register={register("radioGroup")} label="Radio 3" />
 				</div>
 
 				<div className="flex flex-row justify-center gap-2">

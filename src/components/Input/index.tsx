@@ -12,19 +12,25 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	register: UseFormRegisterReturn<any>;
 	required?: boolean;
 	errors?: DeepMap<FieldValues, FieldError>;
+	type?: string;
+	id?: string;
 }
 
-const Input: FC<InputProps> = ({ className, name, label, register, required, errors, ...rest }) => {
-	const inputClasses = classNames("border border-gray-300 rounded-md p-2 m-2 w-full", className);
+const Input: FC<InputProps> = ({ id, className, name, type, label, register, required, errors, ...rest }) => {
+	const inputClasses = classNames(
+		"input",
+		{ "input-radio": type === "radio", "input-checkbox": type === "checkbox" },
+		className,
+	);
 	return (
 		<div className="flex flex-col">
 			{label && (
-				<label className="mt-2 text-sm text-gray-700" htmlFor={name}>
+				<label className="mt-2 text-sm text-gray-700" htmlFor={id ?? name}>
 					{label}
 					{errors && <span className="text-red-500">*</span>}
 				</label>
 			)}
-			<input {...register} {...rest} className={inputClasses} />
+			<input id={id ?? name} {...register} {...rest} type={type} className={inputClasses} />
 			{errors && errors[name] && (
 				<Typography size="xs" variant="warning">
 					* {t("field-required")}
