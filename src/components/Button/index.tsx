@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import classNames from "classnames";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-	variant?: "primary" | "secondary";
+	variant?: "primary" | "secondary" | "danger";
 	textSize?: "small" | "medium" | "large" | number;
 	children: ReactNode;
 }
@@ -21,6 +21,7 @@ const Button: React.FC<ButtonProps> = ({ variant = "primary", textSize = "medium
 		{
 			"bg-blue-500 hover:bg-blue-600 active:bg-blue-900": variant === "primary",
 			"bg-gray-500 hover:bg-gray-600 active:bg-gray-900": variant === "secondary",
+			"bg-red-500  hover:bg-red-600 active:bg-red-900"  : variant === "danger",
 		},
 		textClass,
 		rest.className,
