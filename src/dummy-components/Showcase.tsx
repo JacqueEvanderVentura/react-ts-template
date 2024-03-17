@@ -14,7 +14,7 @@ export const Showcase = () => {
 				<LanguageSwitcher />
 			</div>
 			<Heading level="h2" className="my-4">
-				{t("welcome")} <FontAwesomeIcon className="text-amber-400" icon={faFaceGrinWink} />
+				{t("welcome")} <FontAwesomeIcon className="text-amber-400" icon={faFaceGrinWink} />{" "}
 			</Heading>
 			<div className="flex flex-col justify-center items-center w-5/12 gap-2">
 				<div className="flex justify-center align-center gap-2 mb-3">
