@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import { selectLanguage } from "../../redux/appSettingsSlice";
 
 interface Option {
 	value: string;
@@ -13,9 +16,9 @@ interface CustomDropdownProps {
 }
 
 const CustomDropdown: React.FC<CustomDropdownProps> = ({ options, onChange }) => {
+	const appSettings = useSelector((state: RootState) => selectLanguage(state))
 	const [isOpen, setIsOpen] = useState(false);
-	const [selectedOption, setSelectedOption] = useState(options[0].value);
-
+	const [selectedOption, setSelectedOption] = useState(appSettings.language);
 	const toggleOpen = () => setIsOpen(!isOpen);
 	const onOptionClick = (value: string) => {
 		setSelectedOption(value);

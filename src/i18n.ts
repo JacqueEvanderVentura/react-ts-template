@@ -17,8 +17,5 @@ i18n
 			loadPath: "src/assets/locales/{{lng}}.json",
 		},
 	})
-	.then(() => {
-		console.log("Detected language:", i18n.language);
-	});
 
 export default i18n;
