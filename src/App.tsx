@@ -1,9 +1,9 @@
 import "./App.scss";
 
-import { Showcase } from "./dummy-components/Showcase";
+import Home from "./routes/Home";
 
 function App() {
-	return <Showcase />;
+	return <Home />;
 }
 
 export default App;

@@ -15,6 +15,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
+import { setIsMobile } from "./redux/appSettingsSlice.ts";
 library.add(far, fas, fab);
 
 const router = createBrowserRouter([
@@ -34,10 +35,22 @@ const router = createBrowserRouter([
 		],
 	},
 ]);
+
+const handleResize = () => {
+	store.dispatch(setIsMobile(window.matchMedia("(max-width: 768px)").matches));
+};
+
+const handleOrientationChange = () => {
+	handleResize(); // Call handleResize function to update isMobile state
+};
+
+window.addEventListener("resize", handleResize);
+window.addEventListener("orientationchange", handleOrientationChange); // Listen for orientation change
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
 		<Provider store={store}>
 			<RouterProvider router={router} />
 		</Provider>
-	</React.StrictMode>
+	</React.StrictMode>,
 );
