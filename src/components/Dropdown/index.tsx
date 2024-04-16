@@ -16,7 +16,7 @@ interface CustomDropdownProps {
 }
 
 const CustomDropdown: React.FC<CustomDropdownProps> = ({ options, onChange }) => {
-	const appSettings = useSelector((state: RootState) => selectLanguage(state))
+	const appSettings = useSelector((state: RootState) => selectLanguage(state));
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedOption, setSelectedOption] = useState(appSettings.language);
 	const toggleOpen = () => setIsOpen(!isOpen);

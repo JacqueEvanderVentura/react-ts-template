@@ -5,7 +5,8 @@ import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { useRef, useState } from "react";
 import classNames from "classnames";
 import Header from "../components/Header";
-import HomeBody from "./Home/Home/HomeBody";
+import HomeBody from "./Home/HomeBody";
+import Integrants from "./Integrants";
 
 export const SPA = () => {
 	const ref = useRef<IParallax>(null);
@@ -50,7 +51,9 @@ export const SPA = () => {
 				</div>
 			</ParallaxLayer>
 			<ParallaxLayer offset={1} factor={1}>
-				holiwiii
+				<div className="flex justify-center items-center h-screen">
+					<Integrants />
+				</div>
 			</ParallaxLayer>
 			<ParallaxLayer
 				offset={2}

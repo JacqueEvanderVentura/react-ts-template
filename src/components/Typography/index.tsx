@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 interface TypographyProps extends React.HTMLAttributes<HTMLParagraphElement> {
 	size?: "xs" | "sm" | "base" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl";
-	variant?: "warning" | "caption";
+	variant?: "warning" | "caption" | "card";
 	className?: string;
 }
 
@@ -26,6 +26,7 @@ const Typography: React.FC<TypographyProps> = ({ size = "base", variant, childre
 	const variantStyles = {
 		caption: "text-gray-500 text-sm",
 		warning: "text-red-500 text-xs italic",
+		card: "text-white text-center px-2",
 	};
 
 	const variantClass = variant ? variantStyles[variant] : "";
