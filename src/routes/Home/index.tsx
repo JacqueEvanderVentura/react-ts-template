@@ -8,7 +8,7 @@ const Home = () => {
 				style={{ backgroundImage: "url('src/assets/images/bg/bg-landing-page.svg')" }}
 			/>
 			<div className="bg-[#0008] absolute z-10  h-full w-full" />
-			<div className="absolute z-20 p-4">
+			<div className="absolute z-20">
 				<Header />
 			</div>
 		</div>

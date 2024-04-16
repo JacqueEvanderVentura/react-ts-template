@@ -41,11 +41,11 @@ const handleResize = () => {
 };
 
 const handleOrientationChange = () => {
-	handleResize(); // Call handleResize function to update isMobile state
+	handleResize();
 };
 
 window.addEventListener("resize", handleResize);
-window.addEventListener("orientationchange", handleOrientationChange); // Listen for orientation change
+window.addEventListener("orientationchange", handleOrientationChange);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>

@@ -1,9 +1,9 @@
 import "./App.scss";
+import { SPA } from "./routes/SPA";
 
-import Home from "./routes/Home";
 
 function App() {
-	return <Home />;
+	return <SPA />;
 }
 
 export default App;

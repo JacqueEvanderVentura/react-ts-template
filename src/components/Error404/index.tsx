@@ -2,13 +2,14 @@ import { useRouteError, isRouteErrorResponse, Link } from "react-router-dom";
 import { Button, Heading, Typography } from "..";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleLeft } from "@fortawesome/free-regular-svg-icons";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 interface IErrorMessage {
 	status?: string | number;
 	text?: string;
 }
 const ErrorMessage = ({ status, text }: IErrorMessage) => {
+	const { t } = useTranslation();
 	return (
 		<div id="error-page" className="flex flex-col justify-center items-center h-screen">
 			<Heading level="h1" className="text-6xl">

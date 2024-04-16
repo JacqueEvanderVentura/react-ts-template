@@ -4,7 +4,12 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Roboto', 'sans-serif'],
+        'sans': ['ABeeZee', 'sans-serif', 'ui-sans-serif'],
+		  'serif':['Advent Pro', 'serif', 'ui-serif'],
+		  'display':['Alegreya Sans SC', 'serif']
+      },
+		fontSize: {
+        'custom': 'var(--custom-text-size)',
       },
     },
   },
