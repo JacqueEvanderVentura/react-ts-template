@@ -7,12 +7,14 @@ import classNames from "classnames";
 import Header from "../components/Header";
 import HomeBody from "./Home/HomeBody";
 import Integrants from "./Integrants";
+import OurCause from "./OurCause";
 
 export const SPA = () => {
 	const ref = useRef<IParallax>(null);
 	const [hovered, setHovered] = useState(false);
 
 	const bgHome = "src/assets/images/bg/bg-landing-page.svg";
+	const bgOurCause = "src/assets/images/bg/bg-our-cause.svg";
 	const flyUpClasses = classNames({ "motion-safe:animate-bounce": hovered });
 
 	function handleSmoothScroll(page: number) {
@@ -59,10 +61,17 @@ export const SPA = () => {
 				offset={2}
 				factor={1}
 				style={{
-					width: "fit-content",
-					height: "fit-content",
+					color: "#FFF",
+					backgroundImage: `url(${bgOurCause})`,
+					backgroundPosition: "center",
+					justifyContent: "center",
+					alignItems: "center",
+					backgroundSize: "cover",
 				}}>
-				entonce
+				<div className="bg-[#0008] absolute z-10 h-full w-full" />
+				<div className="absolute z-20 inset-0 flex justify-center items-center">
+					<OurCause handleSmoothScroll={handleSmoothScroll} />
+				</div>
 			</ParallaxLayer>
 			<ParallaxLayer
 				offset={3}
